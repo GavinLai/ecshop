@@ -104,6 +104,7 @@ if ($_REQUEST['act'] == 'insert')
     $cat['article_cat_id']= !empty($_POST['article_cat_id']) ? intval($_POST['article_cat_id'])  : 0;
     $cat['measure_unit'] = !empty($_POST['measure_unit']) ? trim($_POST['measure_unit']) : '';
     $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
+    $cat['cat_name_en']  = !empty($_POST['cat_name_en'])  ? trim($_POST['cat_name_en'])  : '';
     $cat['show_in_nav']  = !empty($_POST['show_in_nav'])  ? intval($_POST['show_in_nav']): 0;
     $cat['style']        = !empty($_POST['style'])        ? trim($_POST['style'])        : '';
     $cat['is_show']      = !empty($_POST['is_show'])      ? intval($_POST['is_show'])    : 0;
@@ -266,6 +267,7 @@ if ($_REQUEST['act'] == 'update')
     $cat['article_cat_id']= !empty($_POST['article_cat_id']) ? intval($_POST['article_cat_id'])  : 0;
     $cat['measure_unit'] = !empty($_POST['measure_unit']) ? trim($_POST['measure_unit']) : '';
     $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
+    $cat['cat_name_en']  = !empty($_POST['cat_name_en'])  ? trim($_POST['cat_name_en'])  : '';
     $cat['is_show']      = !empty($_POST['is_show'])      ? intval($_POST['is_show'])    : 0;
     $cat['show_in_nav']  = !empty($_POST['show_in_nav'])  ? intval($_POST['show_in_nav']): 0;
     $cat['style']        = !empty($_POST['style'])        ? trim($_POST['style'])        : '';
