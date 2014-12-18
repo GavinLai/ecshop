@@ -114,6 +114,9 @@ input{
   text-align: center;
   position: relative;
   vertical-align: middle;
+  line-height: 1.5;
+  font-family: "Microsoft YaHei",Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 .title1 {
   font-size: 30px;
