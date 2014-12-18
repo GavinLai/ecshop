@@ -23,6 +23,7 @@ $_LANG['type_name'][HELP_CAT]   = '網店幫助';
 
 $_LANG['cat_keywords'] = '關鍵字';
 $_LANG['cat_desc'] = '描述';
+$_LANG['cat_pic'] = '分類特徵圖';
 $_LANG['parent_cat'] = '上級分類';
 $_LANG['cat_top'] = '頂級分類';
 $_LANG['not_allow_add'] = '你所選分類不允許添加子分類';

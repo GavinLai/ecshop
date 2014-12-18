@@ -100,6 +100,7 @@ if ($_REQUEST['act'] == 'insert')
     $cat['sort_order']   = !empty($_POST['sort_order'])   ? intval($_POST['sort_order']) : 0;
     $cat['keywords']     = !empty($_POST['keywords'])     ? trim($_POST['keywords'])     : '';
     $cat['cat_desc']     = !empty($_POST['cat_desc'])     ? $_POST['cat_desc']           : '';
+    $cat['cat_pic']      = !empty($_POST['cat_pic'])      ? $_POST['cat_pic']            : '';
     $cat['measure_unit'] = !empty($_POST['measure_unit']) ? trim($_POST['measure_unit']) : '';
     $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
     $cat['show_in_nav']  = !empty($_POST['show_in_nav'])  ? intval($_POST['show_in_nav']): 0;
@@ -259,6 +260,7 @@ if ($_REQUEST['act'] == 'update')
     $cat['sort_order']   = !empty($_POST['sort_order'])   ? intval($_POST['sort_order']) : 0;
     $cat['keywords']     = !empty($_POST['keywords'])     ? trim($_POST['keywords'])     : '';
     $cat['cat_desc']     = !empty($_POST['cat_desc'])     ? $_POST['cat_desc']           : '';
+    $cat['cat_pic']      = !empty($_POST['cat_pic'])      ? $_POST['cat_pic']            : '';
     $cat['measure_unit'] = !empty($_POST['measure_unit']) ? trim($_POST['measure_unit']) : '';
     $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
     $cat['is_show']      = !empty($_POST['is_show'])      ? intval($_POST['is_show'])    : 0;
