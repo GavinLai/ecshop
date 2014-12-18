@@ -25,6 +25,7 @@ $_LANG['type_name'][HELP_CAT]   = 'Shop help';
 
 $_LANG['cat_keywords'] = 'Keywords';
 $_LANG['cat_desc'] = 'Description';
+$_LANG['cat_pic'] = 'Picture';
 $_LANG['parent_cat'] = 'Superior Categories';
 $_LANG['cat_top'] = 'Top Categories';
 $_LANG['not_allow_add'] = 'Classification does not allow you to add the selected sub-classification';

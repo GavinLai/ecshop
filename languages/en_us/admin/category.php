@@ -22,6 +22,7 @@ $_LANG['isleaf'] = 'Disallow';
 $_LANG['noleaf'] = 'Allow';
 $_LANG['keywords'] = 'Keywords';
 $_LANG['cat_desc'] = 'Description';
+$_LANG['cat_pic'] = 'Picture';
 $_LANG['parent_id'] = 'Parent';
 $_LANG['sort_order'] = 'Sort';
 $_LANG['measure_unit'] = 'Quantity unit';

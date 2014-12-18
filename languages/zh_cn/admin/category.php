@@ -20,6 +20,7 @@ $_LANG['isleaf'] = '不允许';
 $_LANG['noleaf'] = '允许';
 $_LANG['keywords'] = '关键字';
 $_LANG['cat_desc'] = '分类描述';
+$_LANG['cat_pic'] = '分类特征图';
 $_LANG['parent_id'] = '上级分类';
 $_LANG['sort_order'] = '排序';
 $_LANG['measure_unit'] = '数量单位';
