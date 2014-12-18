@@ -12,6 +12,7 @@
  * $Author: liubo $
  * $Id: category.php 17217 2011-01-19 06:29:08Z liubo $
 */
+$_LANG['select_plz'] = '請選擇...';
 
 /* 商品分類字段信息 */
 $_LANG['cat_id'] = '編號';
@@ -21,6 +22,7 @@ $_LANG['noleaf'] = '允許';
 $_LANG['keywords'] = '關鍵字';
 $_LANG['cat_desc'] = '分類描述';
 $_LANG['cat_pic'] = '分類特徵圖';
+$_LANG['article_cat'] = '關聯文章分類';
 $_LANG['parent_id'] = '上級分類';
 $_LANG['sort_order'] = '排序';
 $_LANG['measure_unit'] = '數量單位';

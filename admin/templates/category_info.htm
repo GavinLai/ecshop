@@ -148,9 +148,20 @@
       <tr>
         <td class="label">{$lang.cat_pic}:</td>
         <td>
-          <input type="text" name="cat_pic" value='{$cat_info.cat_pic}' size="70"> <font color="red">*</font>
+          <input type="text" name="cat_pic" value='{$cat_info.cat_pic}' size="70">{$lang.require_field}
         </td>
       </tr>
+      
+      <tr>
+        <td class="label">{$lang.article_cat}:</td>
+        <td>
+          <select name="article_cat_id">
+            <option value="0">{$lang.select_plz}</option>
+            {$article_cat_select}
+          </select>{$lang.require_field}
+         </td>
+      </tr>
+      
       </table>
       <div class="button-div">
         <input type="submit" value="{$lang.button_submit}" />

@@ -14,6 +14,7 @@
  * $Author: liubo $
  * $Id: category.php 17217 2011-01-19 06:29:08Z liubo $
 */
+$_LANG['select_plz'] = 'Please select...';
 
 /* Commodity category field information */
 $_LANG['cat_id'] = 'ID';
@@ -23,6 +24,7 @@ $_LANG['noleaf'] = 'Allow';
 $_LANG['keywords'] = 'Keywords';
 $_LANG['cat_desc'] = 'Description';
 $_LANG['cat_pic'] = 'Picture';
+$_LANG['article_cat'] = 'Relative Article Category';
 $_LANG['parent_id'] = 'Parent';
 $_LANG['sort_order'] = 'Sort';
 $_LANG['measure_unit'] = 'Quantity unit';

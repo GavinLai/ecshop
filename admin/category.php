@@ -78,7 +78,7 @@ if ($_REQUEST['act'] == 'add')
     $smarty->assign('cat_select',   cat_list(0, 0, true));
     $smarty->assign('form_act',     'insert');
     $smarty->assign('cat_info',     array('is_show' => 1));
-
+    $smarty->assign('article_cat_select',  article_cat_list(0));
 
 
     /* 显示页面 */
@@ -101,6 +101,7 @@ if ($_REQUEST['act'] == 'insert')
     $cat['keywords']     = !empty($_POST['keywords'])     ? trim($_POST['keywords'])     : '';
     $cat['cat_desc']     = !empty($_POST['cat_desc'])     ? $_POST['cat_desc']           : '';
     $cat['cat_pic']      = !empty($_POST['cat_pic'])      ? $_POST['cat_pic']            : '';
+    $cat['article_cat_id']= !empty($_POST['article_cat_id']) ? intval($_POST['article_cat_id'])  : 0;
     $cat['measure_unit'] = !empty($_POST['measure_unit']) ? trim($_POST['measure_unit']) : '';
     $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
     $cat['show_in_nav']  = !empty($_POST['show_in_nav'])  ? intval($_POST['show_in_nav']): 0;
@@ -214,6 +215,7 @@ if ($_REQUEST['act'] == 'edit')
     $smarty->assign('form_act',    'update');
     $smarty->assign('cat_select',  cat_list(0, $cat_info['parent_id'], true));
     $smarty->assign('goods_type_list',  goods_type_list(0)); // 取得商品类型
+    $smarty->assign('article_cat_select',  article_cat_list(0, $cat_info['article_cat_id']));
 
     /* 显示页面 */
     assign_query_info();
@@ -261,6 +263,7 @@ if ($_REQUEST['act'] == 'update')
     $cat['keywords']     = !empty($_POST['keywords'])     ? trim($_POST['keywords'])     : '';
     $cat['cat_desc']     = !empty($_POST['cat_desc'])     ? $_POST['cat_desc']           : '';
     $cat['cat_pic']      = !empty($_POST['cat_pic'])      ? $_POST['cat_pic']            : '';
+    $cat['article_cat_id']= !empty($_POST['article_cat_id']) ? intval($_POST['article_cat_id'])  : 0;
     $cat['measure_unit'] = !empty($_POST['measure_unit']) ? trim($_POST['measure_unit']) : '';
     $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
     $cat['is_show']      = !empty($_POST['is_show'])      ? intval($_POST['is_show'])    : 0;
