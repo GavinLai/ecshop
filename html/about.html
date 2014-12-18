@@ -9,6 +9,11 @@
 <link href="./css/c.css" rel="stylesheet" type="text/css" />
 <link href="./css/style.css" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|For Every Orgasm - FEO" href="feed.php" />
+<script src="./js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="./css/bg.css" />
+<![endif]-->
+
 </head>
 <body>
 <div id="rtWrap">
@@ -23,7 +28,7 @@
             <form onsubmit="return checkSearchForm()" action="search.php" method="get" name="searchForm" id="searchForm">
              <input type="hidden" name="category" value="0">
              <input type="text" class="sinp" value="" id="keyword" name="keywords">
-             <input type="submit" style="cursor:pointer;" class="s" value="搜索" name="imageField">
+             <input type="submit" style="cursor:pointer;" class="s" value="" name="imageField">
             </form>
           </div>
         </div>
@@ -48,14 +53,14 @@
             <div id="bann_about" > 
                         
             </div>
-            <div id="about" class="clearfix">
-                <ul class="clearfix">
-                  <li id="about_feo" >关于FEO</li>
-                  <li id="feo" class="selected">为什么选择FEO</li>
-                  <li id="company">公司简介</li>
+             <div id="about" class="clearfix">
+                <ul id="about_lis" class="clearfix">
+                  <li id="about_feo" onmouseover="sel('#about1','#about_feo')" class="selected">关于FEO</li>
+                  <li id="feo" onmouseover="sel('#about2','#feo')" >为什么选择FEO</li>
+                  <li id="company" onmouseover="sel('#about3','#company')">公司简介</li>
                 </ul>
-                <div class="about_txt">
-                  <h3 id="about_h">关于feo</h3>
+                <div class="about_txt show" id="about1">
+                  <h3 class="about_h">关于feo</h3>
                   <p>你可能看多了爱情文艺片，故事里的女主角扭扭捏捏半推半就的唯美性爱画面让你误以为，性这回事，姑娘就该是被动接受的，于是从恋爱到婚姻，你都将矜持羞涩进行到底，并对自己”挺尸”一样的床上表现视为是”好女人”。你从来不知道，其实和亲密爱人的互动可以有那么多让两个人都开心的美妙探索，你似乎也从来没有在心爱的人面前完全的打开过自己，接受生命本身的神圣馈赠。</p>
                   <p>“性责任感”</p>
                   <p>假如你无意中瞥见闺蜜的包包里有一盒Durex，你会在心里如何评价她？是认为她是”随便”的女孩？还是认为她其实很懂得享受快乐，并且对自己和他人都很”负责”？你知道吗？一个豁达又美好的姑娘，会更倾向于后者。</p>
@@ -65,6 +70,9 @@
                   <p>还有一类人，他们在青春期接受的”性是罪恶”的观念的影响和生理上本能的性欲望产生强烈冲突，越抗拒越渴望，越禁忌越痴迷，于是这类人的性行为常常是”施虐”或”受虐”的”非常态”表现，而当他人不能够接受时，受挫感和羞耻感会更加强，因而人会变得暴躁易怒或者猜忌善妒。</p>
                   <p>无论是”性羞耻感”还是”性罪错感”，都是性人格不够健康成熟的表现，这样的人在现实生活中，很容易被伴侣误解，也比较难获得完美性爱的满足。而从个性发展来看，性人格不成熟的人，也比较难建立起稳定的自信心。是的姑娘，我想说，已经成年的你，无论如何优秀都感到不自信，或许有一部分，是和你对性本身感到羞耻、厌恶却又悄悄的渴望得不到满足有关。</p>
                 </div>
+                <div class="about_txt" id="about2"><p>dfdasfewr</p></div>
+                <div class="about_txt" id="about3"><p>3333333333333</p></div>
+
             </div>
       
     </div>
@@ -74,6 +82,23 @@
   <div id="pageFoot">
     <span>Copyright &copy; 2014 FEO. All Rights Reserved</span>
   </div>
+  <script>
+  function sel(s_div,s_li)
+  {
+    var lis=$('#about_lis li');
+    var divs=$('.about_txt');
+    for(i=0;i<lis.length;i++)
+    {
+      lis[i].className="";
+    }
+    $(s_li).addClass('selected');
+    for(i=0;i<divs.length;i++)
+    {
+      divs[i].className='about_txt';
+    }
+    $(s_div).addClass('show');
+  }
+  </script>
 </div>
 </body>
 </html>
