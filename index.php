@@ -136,6 +136,9 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
         $smarty->assign('ad', $ad);
     }
 
+    //自定义广告
+    $smarty->assign('ad_diy',   index_ad_diy(1));
+
     /* links */
     $links = index_get_links();
     $smarty->assign('img_links',       $links['img']);

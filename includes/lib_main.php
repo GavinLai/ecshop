@@ -2021,7 +2021,6 @@ function get_navigator($ctype = '', $catlist = array())
     if ($noindex == false) {
         $navlist['config']['index'] = 1;
     }
-
     return $navlist;
 }
 
@@ -2070,4 +2069,29 @@ function url_domain()
     return $root;
 }
 
+
+/** 
+ * 获取指定广告位的数据
+ * @param  [type] $prositionid [description]
+ * @return [type]              [description]
+ */
+function index_ad_diy($prositionid)
+{
+     $sql = 'SELECT * FROM ' . $GLOBALS['ecs']->table('ad') . ' WHERE position_id='.$prositionid.' ORDER BY end_time asc limit 0,10';
+     $res = $GLOBALS['db']->getAll($sql);
+     
+     $arr = array();
+    foreach ($res AS $idx => $row)
+    {
+        $arr[$idx]['id']          = $row['ad_id'];
+        $arr[$idx]['title']       = $row['ad_name'];
+        $arr[$idx]['imglink']       = $row['ad_link'];
+        if(strstr($row['ad_code'],"http")){
+            $arr[$idx]['imgcode']     = $row['ad_code'];
+        }else{
+            $arr[$idx]['imgcode']     = "/data/afficheimg/".$row['ad_code'];
+        }
+    }
+    return $arr;
+}
 ?>
