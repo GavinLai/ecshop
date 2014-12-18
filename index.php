@@ -127,6 +127,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('auction_list',    index_get_auction());        // 拍卖活动
     $smarty->assign('shop_notice',     $_CFG['shop_notice']);       // 商店公告
 
+
     /* 首页主广告设置 */
     $smarty->assign('index_ad',     $_CFG['index_ad']);
     if ($_CFG['index_ad'] == 'cus')
@@ -138,6 +139,9 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
 
     //自定义广告
     $smarty->assign('ad_diy',   index_ad_diy(1));
+
+    //分类列表
+    $smarty->assign('index_catelist',   index_catelist(1));
 
     /* links */
     $links = index_get_links();
@@ -358,6 +362,28 @@ function index_get_links()
     }
 
     return $links;
+}
+/**
+ * 首页分类列表
+ * @return [type] [description]
+ */
+function index_catelist($cat_id){
+    $sql = "SELECT c.*,a.cat_pic AS a_cat_pic,a.cat_id AS a_cat_id FROM ".$GLOBALS['ecs']->table('category')." AS c LEFT JOIN  ".$GLOBALS['ecs']->table('article_cat').' AS a ON c.article_cat_id=a.cat_id WHERE c.parent_id='.$cat_id.' ORDER BY c.sort_order' ;
+    $res = $GLOBALS['db']->getAll($sql);
+
+    foreach($res as &$val){
+        if(strstr($val['cat_pic'],"http")){
+            $val['cat_pic'] = $val['cat_pic'];
+        }else{
+            $val['cat_pic'] = "/data/afficheimg/".$val['cat_pic'];
+        }
+        if(strstr($val['a_cat_pic'],"http")){
+            $val['a_cat_pic'] = $val['a_cat_pic'];
+        }else{
+            $val['a_cat_pic'] = "/data/afficheimg/".$val['a_cat_pic'];
+        }
+    }
+    return $res; 
 }
 
 ?>

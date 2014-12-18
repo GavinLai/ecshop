@@ -1,4 +1,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- START 自定义css -->
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="./css/bg.css" />
+<![endif]-->
+<link href="{$css_dir}/style.css" rel="stylesheet" type="text/css" />
+
+<!-- START rtWrap -->
+<div id="rtWrap">
+<!-- END 自定义css -->
 <div id="pageHead">
     <div class="main theTop">
       <div class="logoArea"><a href="index.html"><img src="{$theme_dir}/img/feo_logo.png" alt="FEO LOGO"/></a></div>

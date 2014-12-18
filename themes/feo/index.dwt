@@ -13,13 +13,6 @@
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
-<!-- START 自定义css -->
-<!--[if lt IE 9]>
-<link rel="stylesheet" href="./css/bg.css" />
-<![endif]-->
-<link href="{$css_dir}/style.css" rel="stylesheet" type="text/css" />
-<link href="{$css_dir}/c.css" rel="stylesheet" type="text/css" />
-<!-- END 自定义css -->
 
 <!-- START 自定义js -->
 {insert_scripts files='jquery-1.8.3.min.js,touchslider.min.js'}
@@ -31,7 +24,6 @@
 
 </head>
 <body>
-<div id="rtWrap">
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
   <div id="pageContent">
     <div class="main indexMain">
@@ -105,47 +97,24 @@
         <!-- END 广告位 -->
 
         <ul id="series">
+          <!--{foreach from=$index_catelist item=val name=catelist}-->
           <li>
             <div class="description">
               <a href="" class="series_des">
-                <p class="title1">精灵系列</p>
-                <p class="title2">GENIUS SERIES</p>
+                <p class="title1">{$val.cat_name}</p>
+                <p class="title2">{$val.cat_name_en}</p>
               </a>
               <a href="" class="more">更多MORE</a>
             </div>
-            <img src="{$theme_dir}/img/series_img_1.jpg" alt="" class="img_left" >
-            <img src="{$theme_dir}/img/series_img_2.jpg" alt="" >
+            <img src="{$val.a_cat_pic}" alt="" class="img_left" >
+            <img src="{$val.cat_pic}" alt="" >
           </li>
-          <li>
-            <div class="description">
-              <a href="" class="series_des">
-                <p class="title1">精灵系列</p>
-              <p class="title2">GENIUS SERIES</p>
-              </a>
-              <a href="" class="more">更多MORE</a>
-            </div>
-            <img src="{$theme_dir}/img/series_img_1.jpg" alt="" class="img_left">
-            <img src="{$theme_dir}/img/series_img_2.jpg" alt="">
-          </li>
-          <li>
-            <div class="description">
-              <a href="" class="series_des">
-                <p class="title1">精灵系列</p>
-              <p class="title2">GENIUS SERIES</p>
-              </a>
-              <a href="" class="more">更多MORE</a>
-            </div>
-            <img src="{$theme_dir}/img/series_img_1.jpg" alt="" class="img_left">
-            <img src="{$theme_dir}/img/series_img_2.jpg" alt="">
-          </li>
-          
-
+          <!--{/foreach}-->
         </ul>
       
     </div>
   </div>
   
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
-</div>
 </body>
 </html>
