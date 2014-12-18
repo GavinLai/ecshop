@@ -1,0 +1,6 @@
+#rtWrap{ 
+  background: url("../img/bg_repeat_top.png") top left repeat-x;
+}
+#pageFoot span{
+	color: #000;
+}

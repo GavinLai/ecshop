@@ -9,7 +9,7 @@
             <form onsubmit="return checkSearchForm()" action="search.php" method="get" name="searchForm" id="searchForm">
              <input type="hidden" name="category" value="0">
              <input type="text" class="sinp" value="" id="keyword" name="keywords">
-             <input type="submit" style="cursor:pointer;" class="s" value="搜索" name="imageField">
+             <input type="submit" style="cursor:pointer;" class="s" value="" name="imageField">
             </form>
           </div>
         </div>
