@@ -13,7 +13,7 @@ body{background:url(../img/bg_repeat.png) repeat;}
 .line2px{width:100%;height:0;font-size:0;line-height:0;border-bottom:2px solid #000;}
 .left{float: left;}
 .right{float: right;}
-.main {width:1024px;margin:0 auto;}
+.main {width:1004px;margin:0 auto;}
 
 #rtWrap{background: url("../img/bg_repeat_top.png") top left repeat-x,url('../img/bg_repeat_btm.png') bottom left repeat-x;min-height:2212px;position:relative;}
 #pageHead{color:#000;font-size:14px;}
@@ -40,8 +40,9 @@ body{background:url(../img/bg_repeat.png) repeat;}
 #pageFoot{color:#fff;text-align:center;position:absolute;bottom:0;height:100px;line-height:100px;width:100%;font-size:14px;}
 /*--- END Common CSS ---*/
 
+.indexMain{width:1033px;}
 #banner { 
-  width:1000px; height:613px; margin:0 auto;  position:relative; z-index:1;
+  width:100%; height:613px; position:relative; z-index:1;
 }
 #banner li{
   width:100%; 
@@ -53,16 +54,18 @@ body{background:url(../img/bg_repeat.png) repeat;}
   display:none;
   border-radius: 60px;
 }
-
+/*
 #banner li.b1{background:url("../img/banner1.png") center top no-repeat;}
 #banner li.b2{background:url("../img/banner1.png") center top no-repeat;}
 #banner li.b3{background:url("../img/banner1.png") center top no-repeat;}
 #banner li.b4{background:url("../img/banner1.png") center top no-repeat;}
 #banner li.b5{background:url("../img/banner1.png") center top no-repeat;}
+*/
+#series{width:1004px;margin:0 auto;}
 #series li{
   width: 100%;
   height: 405px;
-  margin: 10px 0px;
+  margin: 15px 0;
 }
 #banner .btn{
   width:150px; 
@@ -95,16 +98,19 @@ body{background:url(../img/bg_repeat.png) repeat;}
   position: absolute;
   top:45%;
   left: 70px;
+  color: #fff;
 }
 .more {
   position: absolute;
   bottom: 50px;
   left: 40%;
+  color: #fff;
 }
-.img_left {
-  margin: 0px 8px 0px 3px;
-}
+.img_left {margin: 0px 4px 0 2px;}
 /*模特*/
+#model_info{margin:0;padding:0;vertical-align:top;}
+#model_info > img{vertical-align:top;}
+#model_img{margin-top:30px;}
 #info {
   width: 510px;
 }
@@ -148,7 +154,7 @@ body{background:url(../img/bg_repeat.png) repeat;}
   border-radius: 60px;
   width: 1004px;
   height: 321px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 #about_h {
   font-size: 24px;
@@ -165,34 +171,50 @@ body{background:url(../img/bg_repeat.png) repeat;}
   margin: 0px auto;
   border-bottom: 2px solid #000;
 }
-.selected {
-  background-color: #bb32fb!important;
-}
 #about li {
   float: left;
   font-size: 18px;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   height: 20px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  margin: 0px 3px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 0px 5px;
   background-color: #000;
+  color:#eee;
 }
+#about li.selected{
+	background-color: #bb32fb;
+}
+.about_txt{margin-top:20px;}
 /*爱上*/
+#love,#love ul{width:100%;}
 #love li{
-  float: left;
-  margin: 5px;
+  float:left;
+  width:33.33333%;
+  margin-bottom:10px;
+}
+#love li > div{
+	width:325px;
+	margin:0 auto;
+}
+#love li img{
+	vertical-align:top;
+}
+#love li p{
+	padding: 10px 20px;
+  font-size: 14px;
+  background-color: #D4a146;
+  text-align: center;
 }
 #bann_love {
   background: url("../img/contact_b.jpg") no-repeat;
   border-radius: 60px;
-  width: 1004px;
+  width: 100%;
   height: 321px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 #love_title {
-  width: 287px;
   padding: 10px 20px;
   font-size: 14px;
   background-color: #D4a146;
