@@ -1,72 +1,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript">
-var process_request = "{$lang.process_request}";
-</script>
-<div class="block clearfix">
- <div class="f_l"><a href="../index.php" name="top"><img src="../images/logo.gif" /></a></div>
- <div class="f_r log">
-   <ul>
-   <li class="userInfo">
-   {insert_scripts files='transport.js,utils.js'}
-   <font id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font>
-   </li>
-   <!--{if $navigator_list.top}-->
-   <li id="topNav" class="clearfix">
-    <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
-            <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
-            <!-- {if !$smarty.foreach.nav_top_list.last} -->
-             |
-            <!-- {/if} -->
-    <!-- {/foreach} -->
-    <div class="topNavR"></div>
-   </li>
-   <!-- {/if} -->
-   </ul>
- </div>
-</div>
-<div  class="blank"></div>
-<div id="mainNav" class="clearfix">
-  <a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}<span></span></a>
-  <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
-  <a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}<span></span></a>
- <!-- {/foreach} -->
-</div>
-<!--search start-->
-<div id="search"  class="clearfix">
-  <div class="keys f_l">
-   <script type="text/javascript">
-    {literal}
-    <!--
-    function checkSearchForm()
-    {
-        if(document.getElementById('keyword').value)
-        {
-            return true;
-        }
-        else
-        {
-            alert("{$lang.no_keywords}");
-            return false;
-        }
-    }
-    -->
-    {/literal}
-    </script>
-    {if $searchkeywords}
-   {$lang.hot_search} ：
-   {foreach from=$searchkeywords item=val}
-   <a href="search.php?keywords={$val|escape:url}">{$val}</a>
-   {/foreach}
-   {/if}
+<div id="pageHead">
+    <div class="main theTop">
+      <div class="logoArea"><a href="index.html"><img src="{$theme_dir}/img/feo_logo.png" alt="FEO LOGO"/></a></div>
+      <div class="rtArea">
+        <div class="rtRow"><div class="rt gz clearfix"><span>关注FEO：</span><div class="lnk clearfix"><a href="javascript:;" title="微信">&nbsp;</a><a href="javascript:;" title="腾讯微博">&nbsp;</a><a href="javascript:;" title="新浪微博">&nbsp;</a></div></div></div>
+        <div class="rtRow">
+          <div class="rt search clearfix">
+            <form onsubmit="return checkSearchForm()" action="search.php" method="get" name="searchForm" id="searchForm">
+             <input type="hidden" name="category" value="0">
+             <input type="text" class="sinp" value="" id="keyword" name="keywords">
+             <input type="submit" style="cursor:pointer;" class="s" value="搜索" name="imageField">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main navBar">
+      <div class="rt"><a href="user.php">登录</a><span>|</span><a href="user.php?act=register">注册</a></div>
+      <ul class="navCont clearfix">
+        <!--
+        <li class="navIt"><a href="index.html">首页</a></li>
+        <li class="navIt"><a href="model.html">FEO产品</a></li>
+        <li class="navIt"><a href="love.html">爱上情趣</a></li>
+        <li class="navIt"><a href="about.html">关于FEO</a></li>
+        <li class="navIt"><a href="contact.html">联系我们</a></li>-->
+        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+        <li class="navIt"><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a></li>
+        <!-- {/foreach} -->
+      </ul>
+    </div>
   </div>
-  <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="f_r"  style="_position:relative; top:5px;">
-   <select name="category" id="category" class="B_input">
-      <option value="0">{$lang.all_category}</option>
-      {$category_list}
-    </select>
-   <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="B_input" style="width:110px;"/>
-   <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
-   <a href="search.php?act=advanced_search">{$lang.advanced_search}</a>
-   </form>
-</div>
-<!--search end-->
