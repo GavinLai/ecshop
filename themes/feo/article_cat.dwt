@@ -37,7 +37,7 @@
             <li>
               <div>
                 <a href="{$article.url}" title="{$article.title|escape:html}">
-                <img src="<!--{if empty($article.file_url)}--><!--{$theme_dir}-->/img/love.jpg<!--{else}-->{$article.file_url}<!--{/if}-->" alt="" />
+                <img src="<!--{if empty($article.file_url)}--><!--{$theme_dir}-->/img/love_default.jpg<!--{else}-->{$article.file_url}<!--{/if}-->" alt="" />
                 <p id="love_title">{$article.short_title}</p>
                 </a>
               </div>
