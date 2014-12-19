@@ -16,9 +16,19 @@
 <div id="rtWrap">
   <div id="pageHead">
     <div class="main theTop">
-      <div class="logoArea"><a href="index.html"><img src="{$theme_dir}/img/feo_logo.png" alt="FEO LOGO"/></a></div>
+      <div class="logoArea"><a href="/" title="LOGO"><img src="{$theme_dir}/img/feo_logo.png" alt="FEO LOGO"/></a></div>
       <div class="rtArea">
-        <div class="rtRow"><div class="rt gz clearfix"><span>关注FEO：</span><div class="lnk clearfix"><a href="javascript:;" title="微信">&nbsp;</a><a href="javascript:;" title="腾讯微博">&nbsp;</a><a href="javascript:;" title="新浪微博">&nbsp;</a></div></div></div>
+        <div class="rtRow">
+          <div class="rt gz clearfix">
+            <span>关注FEO：</span>
+            <div id="gz_icon" class="lnk clearfix"><a href="javascript:;" title="扫码关注微信" rel="wx">&nbsp;</a><a href="javascript:;" title="扫码关注腾讯微博" rel="tt">&nbsp;</a><a href="javascript:;" title="扫码关注新浪微博" rel="wb">&nbsp;</a></div>
+            <div id="gz_qrcode">
+              <img src="{$css_dir}/../img/qrcode_wx.jpg" alt="" class="wx" />
+              <img src="{$css_dir}/../img/qrcode_tt.jpg" alt="" class="tt" />
+              <img src="{$css_dir}/../img/qrcode_wb.jpg" alt="" class="wb" />
+            </div>
+          </div>
+        </div>
         <div class="rtRow">
           <div class="rt search clearfix">
             <form onsubmit="return checkSearchForm()" action="search.php" method="get" name="searchForm" id="searchForm">
@@ -30,6 +40,21 @@
         </div>
       </div>
     </div>
+<script type="text/javascript">
+$(function(){
+  var $qr = $('#gz_qrcode');
+  $('#gz_icon > a').each(function(){
+    $(this).bind('mouseover',function(){
+      $('img.'+$(this).attr('rel'),$qr).show();
+      $qr.show();
+    })
+    .bind('mouseout',function(){
+      $qr.hide();
+      $('img.'+$(this).attr('rel'),$qr).hide();
+    });
+  });
+});
+</script>
     <div class="main navBar">
       <div class="rt"><a href="user.php">登录</a><span>|</span><a href="user.php?act=register">注册</a></div>
       <ul class="navCont clearfix">

@@ -18,10 +18,16 @@ body{background:url(../img/bg_repeat.png) repeat;}
 .theTop .rtArea{margin-left:253px;min-height:113px;_height:113px;}
 .theTop .rtRow {height:50px;}
 .theTop .rtRow .rt{float:right;}
+.theTop .rtRow .gz{position:relative;}
 .theTop .rtRow .gz span{float:left;font-size:16px;padding-top:5px;}
 .theTop .rtRow .gz .lnk{float:left;background:url(../img/wbwx.png) no-repeat;}
 .theTop .rtRow .gz .lnk a{float:left;display:block;width:31px;height:31px;}
 .theTop .rtRow .gz .lnk a:hover{text-decoration:none;}
+#gz_qrcode{position:absolute;width:187px;height:172px;right:-15px;top:32px;display:none;overflow:hidden;z-index:1000;}
+#gz_qrcode img{display:none;height:100%;position:relative;top:0;left:0;}
+#gz_qrcode img.wx{}
+#gz_qrcode img.tt{left:5px;}
+#gz_qrcode img.wb{left:10px;}
 .theTop .rtRow .search {padding-top:10px;}
 .theTop .rtRow .search .sinp{z-index:10;width:175px;height:30px;line-height:30px;border:2px solid #000;padding-left:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
 .theTop .rtRow .search .s{
