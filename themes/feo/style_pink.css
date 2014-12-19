@@ -1,14 +1,18 @@
 /*
-Template Name: ECSHOP Default
-Template URI: http://www.ecshop.com/
-Description: 默认升级粉红版.
-Version: 2.7.2
-Author: ECSHOP Team
-Author URI: http://www.ecshop.com/
+Template Name: For FEO
+Template URI: http://feo.xurl.cn/
+Description: Design for FEO
+Version: 1.0.0
+Author: Donglong Technical Team
+Author URI: http://weium.com/
 Logo filename: logo.gif
 Template Type: typepink_0
 */
 
+/* ===============
+     FEO样式
+=============== */
+@import url(./css/style.css);
 
 /* ====================
      公共样式
@@ -497,3 +501,4 @@ visibility:hidden;
  float:left;
  width:300px;
 }
+
