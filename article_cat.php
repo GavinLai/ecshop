@@ -120,11 +120,16 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
 
         $goon_keywords = urlencode($_REQUEST['keywords']);
     }
+
     $smarty->assign('artciles_list',    get_cat_articles($cat_id, $page, $size ,$keywords));
     $smarty->assign('cat_id',    $cat_id);
     /* 分页 */
     assign_pager('article_cat', $cat_id, $count, $size, '', '', $page, $goon_keywords);
     assign_dynamic('article_cat');
+
+
+    //自定义广告
+    $smarty->assign('ad_diy',   index_ad_diy(1));
 }
 
 $smarty->assign('feed_url',         ($_CFG['rewrite'] == 1) ? "feed-typearticle_cat" . $cat_id . ".xml" : 'feed.php?type=article_cat' . $cat_id); // RSS URL

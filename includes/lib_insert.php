@@ -219,6 +219,107 @@ function insert_ads($arr)
     return $val;
 }
 
+
+/**
+ * 调用指定的广告位的广告
+ *
+ * @access  public
+ * @param   integer $id     广告位ID
+ * @param   integer $num    广告数量
+ * @return  string
+ */
+function insert_ads_custom($arr)
+{
+    static $static_res = NULL;
+
+    $time = gmtime();
+    if (!empty($arr['num']) && $arr['num'] != 1)
+    {
+        $sql  = 'SELECT a.ad_id, a.position_id, a.media_type, a.ad_link, a.ad_code, a.ad_name, p.ad_width, ' .
+                    'p.ad_height, p.position_style, RAND() AS rnd ' .
+                'FROM ' . $GLOBALS['ecs']->table('ad') . ' AS a '.
+                'LEFT JOIN ' . $GLOBALS['ecs']->table('ad_position') . ' AS p ON a.position_id = p.position_id ' .
+                "WHERE enabled = 1 AND start_time <= '" . $time . "' AND end_time >= '" . $time . "' ".
+                    "AND a.position_id = '" . $arr['id'] . "' " .
+                'ORDER BY rnd LIMIT ' . $arr['num'];
+        $res = $GLOBALS['db']->GetAll($sql);
+    }
+    else
+    {
+        if ($static_res[$arr['id']] === NULL)
+        {
+            $sql  = 'SELECT a.ad_id, a.position_id, a.media_type, a.ad_link, a.ad_code, a.ad_name, p.ad_width, '.
+                        'p.ad_height, p.position_style, RAND() AS rnd ' .
+                    'FROM ' . $GLOBALS['ecs']->table('ad') . ' AS a '.
+                    'LEFT JOIN ' . $GLOBALS['ecs']->table('ad_position') . ' AS p ON a.position_id = p.position_id ' .
+                    "WHERE enabled = 1 AND a.position_id = '" . $arr['id'] .
+                        "' AND start_time <= '" . $time . "' AND end_time >= '" . $time . "' " .
+                    'ORDER BY rnd LIMIT 1';
+            $static_res[$arr['id']] = $GLOBALS['db']->GetAll($sql);
+        }
+        $res = $static_res[$arr['id']];
+    }
+    $ads = array();
+    $position_style = '';
+
+    foreach ($res AS $row)
+    {
+        if ($row['position_id'] != $arr['id'])
+        {
+            continue;
+        }
+        $position_style = $row['position_style'];
+        switch ($row['media_type'])
+        {
+            case 0: // 图片广告
+                $src = (strpos($row['ad_code'], 'http://') === false && strpos($row['ad_code'], 'https://') === false) ?
+                        DATA_DIR . "/afficheimg/$row[ad_code]" : $row['ad_code'];
+                $ads[] = "<a href='affiche.php?ad_id=$row[ad_id]&amp;uri=" .urlencode($row["ad_link"]). "'
+                target='_blank'><img src='$src' width='" .$row['ad_width']. "' height='$row[ad_height]'
+                border='0' /></a>";
+                $ads[] = array(
+                        'width'     =>$row['ad_width'],
+                        'height'    =>$row['ad_height'],
+                        'img_url'   => $src,
+                        'ad_url'    => "affiche.php?ad_id=$row[ad_id]&amp;uri=" .urlencode($row["ad_link"])
+                    );
+                break;
+            case 1: // Flash
+                $src = (strpos($row['ad_code'], 'http://') === false && strpos($row['ad_code'], 'https://') === false) ?
+                        DATA_DIR . "/afficheimg/$row[ad_code]" : $row['ad_code'];
+                $ads[] = "<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" " .
+                         "codebase=\"http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0\"  " .
+                           "width='$row[ad_width]' height='$row[ad_height]'>
+                           <param name='movie' value='$src'>
+                           <param name='quality' value='high'>
+                           <embed src='$src' quality='high'
+                           pluginspage='http://www.macromedia.com/go/getflashplayer'
+                           type='application/x-shockwave-flash' width='$row[ad_width]'
+                           height='$row[ad_height]'></embed>
+                         </object>";
+                break;
+            case 2: // CODE
+                $ads[] = $row['ad_code'];
+                break;
+            case 3: // TEXT
+                $ads[] = "<a href='affiche.php?ad_id=$row[ad_id]&amp;uri=" .urlencode($row["ad_link"]). "'
+                target='_blank'>" .htmlspecialchars($row['ad_code']). '</a>';
+                break;
+        }
+    }
+    $position_style = 'str:' . $position_style;
+
+    $need_cache = $GLOBALS['smarty']->caching;
+    $GLOBALS['smarty']->caching = false;
+
+    $GLOBALS['smarty']->assign('ads', $ads);
+    $val = $GLOBALS['smarty']->fetch($position_style);
+
+    $GLOBALS['smarty']->caching = $need_cache;
+
+    return $val;
+}
+
 /**
  * 调用会员信息
  *
