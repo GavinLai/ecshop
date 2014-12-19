@@ -36,14 +36,16 @@
           <!--{foreach from=$index_catelist item=val name=catelist}-->
           <li>
             <div class="description">
-              <a href="" class="series_des">
+              <a href="category.php?id={$val.cat_id}" class="series_des">
                 <p class="title1">{$val.cat_name}</p>
                 <p class="title2">{$val.cat_name_en}</p>
               </a>
-              <a href="" class="more">更多MORE</a>
+              <a href="category.php?id={$val.cat_id}" class="more">更多MORE</a>
             </div>
-            <img src="{$val.a_cat_pic}" alt="" class="img_left" >
-            <img src="{$val.cat_pic}" alt="" >
+            <a href="article.php?id={$val.article.article_id}"><img src="{$val.a_cat_pic}" alt="" class="img_left" ></a>
+            <a href="category.php?id={$val.cat_id}">
+                <img src="{$val.cat_pic}" alt="" >
+            </a>
           </li>
           <!--{/foreach}-->
         </ul>

@@ -136,7 +136,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
         $ad = $db->getRow($sql, true);
         $smarty->assign('ad', $ad);
     }
-    
+
 
     //分类列表
     $smarty->assign('index_catelist',   index_catelist(1));
@@ -380,6 +380,10 @@ function index_catelist($cat_id){
         }else{
             $val['a_cat_pic'] = "/data/afficheimg/".$val['a_cat_pic'];
         }
+        $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('article').' WHERE cat_id='.$val['cat_id'].' AND is_open=1  ORDER BY  add_time DESC LIMIT 1' ;
+        $article = $GLOBALS['db']->getRow($sql);
+        $val['article'] = $article;
+        
     }
     return $res; 
 }
