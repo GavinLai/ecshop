@@ -274,9 +274,9 @@ function insert_ads_custom($arr)
             case 0: // 图片广告
                 $src = (strpos($row['ad_code'], 'http://') === false && strpos($row['ad_code'], 'https://') === false) ?
                         DATA_DIR . "/afficheimg/$row[ad_code]" : $row['ad_code'];
-                $ads[] = "<a href='affiche.php?ad_id=$row[ad_id]&amp;uri=" .urlencode($row["ad_link"]). "'
+                /*$ads[] = "<a href='affiche.php?ad_id=$row[ad_id]&amp;uri=" .urlencode($row["ad_link"]). "'
                 target='_blank'><img src='$src' width='" .$row['ad_width']. "' height='$row[ad_height]'
-                border='0' /></a>";
+                border='0' /></a>";*/
                 $ads[] = array(
                         'width'     =>$row['ad_width'],
                         'height'    =>$row['ad_height'],
@@ -311,7 +311,7 @@ function insert_ads_custom($arr)
 
     $need_cache = $GLOBALS['smarty']->caching;
     $GLOBALS['smarty']->caching = false;
-
+    
     $GLOBALS['smarty']->assign('ads', $ads);
     $val = $GLOBALS['smarty']->fetch($position_style);
 

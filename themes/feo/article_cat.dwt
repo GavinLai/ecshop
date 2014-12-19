@@ -26,11 +26,8 @@
   
     <div class="main">
 
-      <div id="bann_love" style="background-image:url('')">
-      </div>
-
       <!-- START 广告位 -->
-      {insert name='ads_custom' id='' num=1}
+      {insert name='ads_custom' id='2' num=1}
       <!-- END 广告位 -->
 
       <!--START 文章 -->
