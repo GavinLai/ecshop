@@ -28,73 +28,9 @@
   <div id="pageContent">
     <div class="main indexMain">
       
-        <!-- START 广告位 -->
-        <div id="banner">
-        <ul>
-          {foreach from=$ad_diy item=ad name=ad}
-          <li class="b1" style="background:url('{$ad.imgcode}') center top no-repeat; <!--{if $smarty.foreach.ad.first}-->display:block;<!--{/if}-->" onclick="window.open('{$ad.imglink}','_blank');"></li>
-          {/foreach}
-        </ul>
-
-        <div class="btn">
-            {foreach from=$ad_diy item=ad name=ad2}
-            <!--{if $smarty.foreach.ad2.first}-->
-            <img src="{$theme_dir}/img/1.png">
-            <!--{else}-->
-            <img src="{$theme_dir}/img/2.png">
-            <!--{/if}-->
-            {/foreach}
-        </div>
-        </div>
-        <script type="text/javascript">
-        $(function (){
-            var len=$("#banner li").length;
-            var i=0;
-            var lunhuan;
-            var kuan=$('#banner').width();//$(window).width();
-            $("#banner li").css('width',kuan);
-
-            function huan()
-            {   
-                $("#banner li:eq("+i+")").siblings("li").hide();
-                $("#banner li:eq("+i+")").show();
-                $("#banner .btn img").attr('src', '{$theme_dir}/img/2.png');
-                $("#banner .btn img").eq(i).attr('src', '{$theme_dir}/img/1.png');
-                i=i+1
-                if(i==len)
-                {i=0}
-
-            }
-            lunhuan=setInterval(huan,4000);
-            $('#banner .btn img').click(function(){
-                clearInterval(lunhuan);
-                var v=$(this).index();
-                $("#banner li:eq("+v+")").siblings("li").hide();
-                $("#banner li:eq("+v+")").show();
-                $("#banner .btn img").attr('src', '{$theme_dir}/img/2.png');
-                $("#banner .btn img").eq(v).attr('src', '{$theme_dir}/img/1.png');
-                i=v+1
-                if(i==len)
-                {i=0}
-                
-                lunhuan=setInterval(huan,4000); 
-            });
-            
-            
-            $('#function li[class=list]').hover(
-                function(){
-                    $(this).addClass('hover');
-                },
-                
-                function(){
-                    $(this).removeClass('hover');
-                }
-            );
-
-
-        });
-        </script>
-        <!-- END 广告位 -->
+       <!-- START 广告位 -->
+       {insert name='ads_custom' id='1' num=5}
+       <!-- END 广告位 -->
 
         <ul id="series">
           <!--{foreach from=$index_catelist item=val name=catelist}-->

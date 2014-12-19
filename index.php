@@ -136,9 +136,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
         $ad = $db->getRow($sql, true);
         $smarty->assign('ad', $ad);
     }
-
-    //自定义广告
-    $smarty->assign('ad_diy',   index_ad_diy(1));
+    
 
     //分类列表
     $smarty->assign('index_catelist',   index_catelist(1));
