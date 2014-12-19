@@ -10,7 +10,7 @@ html > body{background:url(../img/bg_repeat.png) repeat;margin:0;padding:0;}
 .right{float: right;}
 .main {width:1004px;margin:0 auto;}
 
-#rtWrap{background: url("../img/bg_repeat_top.png") top left repeat-x,url('../img/bg_repeat_btm.png') bottom left repeat-x;min-height:1024px;position:relative;}
+#rtWrap{background: url("../img/bg_repeat_top.png") top left repeat-x;position:relative;}
 #pageHead{color:#000;font-size:14px;}
 .theTop{padding-top:15px;width:1000px;}
 .navBar{margin-top:5px;}
@@ -51,9 +51,12 @@ html > body{background:url(../img/bg_repeat.png) repeat;margin:0;padding:0;}
 .navBar .navCont{padding-left:100px;}
 .navBar .navIt{float:left;}
 .navBar .navIt a{color:#000;display:block;text-align:center;width:120px;height:48px;line-height:48px;font-size:16px;}
-#pageContent{padding:30px 0 100px;border-top:2px solid #000;}
-#pageFoot{color:#000;text-align:center;position:absolute;bottom:0;height:100px;line-height:100px;width:100%;font-size:14px;background: url('../img/bg_repeat_btm.png') bottom left repeat-x;}
+#pageContent{padding:30px 0 0;border-top:2px solid #000;}
+#pageFoot{color:#000;text-align:center;/*position:absolute;bottom:0;*/margin-top:30px;height:100px;line-height:100px;width:100%;font-size:14px;background: url('../img/bg_repeat_btm.png') bottom left repeat-x;}
 /*--- END Common CSS ---*/
+
+/* Hack ecshop css */
+#rtWrap .box{padding:0;}
 
 input{
   vertical-align: middle;
@@ -144,15 +147,15 @@ input{
   border-radius: 60px;
   width: 1004px;
   height: 321px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
+#contact{ overflow: auto;zoom: 1; padding: 0 0 30px 0; }
 #contact_info {
   width: 500px;
   display: table;
 }
 #contact_info p{
-  
-  margin-bottom: 55px;
+  margin-bottom: 36px;
   height: 40px;
   line-height: 40px;
   vertical-align: middle;
@@ -260,5 +263,4 @@ input{
   font-size: 20px;
   line-height: 30px;
 }
-
 
