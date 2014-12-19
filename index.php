@@ -380,7 +380,7 @@ function index_catelist($cat_id){
         }else{
             $val['a_cat_pic'] = "/data/afficheimg/".$val['a_cat_pic'];
         }
-        $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('article').' WHERE cat_id='.$val['cat_id'].' AND is_open=1  ORDER BY  add_time DESC LIMIT 1' ;
+        $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('article').' WHERE cat_id='.$val['article_cat_id'].' AND is_open=1  ORDER BY  add_time DESC LIMIT 1' ;
         $article = $GLOBALS['db']->getRow($sql);
         $val['article'] = $article;
         

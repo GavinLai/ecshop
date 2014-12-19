@@ -121,7 +121,7 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
     assign_dynamic('article');
 }
 
-if(isset($article) && in_array($article['article_id'], array('5','4'))){
+if(isset($article) && (in_array($article['article_id'], array('5','4')) || in_array($article['cat_id'], array('5','6','7')))){
     //自定义模板 磁于FEO,联系我们
     $smarty->display('article_custom_1.dwt', $cache_id);
 }elseif(isset($article) && in_array($article['cat_id'], array('8','4'))){
