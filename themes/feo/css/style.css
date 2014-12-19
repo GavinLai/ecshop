@@ -1,13 +1,8 @@
-/*
-Template Name: For FEO
-Template URI: http://feo.xurl.cn/
-Description: Design for FEO
-Version: 2.7.2
-Author: Donglong Technical Team
-Author URI: http://www.8558.com/
-Logo filename: logo.gif
-Template Type: type_0
-*/
+/* ==========================
+   reset && core css(for FEO)
+========================== */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}select{-webkit-appearance:none}html{font-size:62.5%}body{font-size:14px;font-size:1.4rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;line-height:1.5;color:#333}.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{zoom:1}*:first-child+html .clearfix{zoom:1}.fl,.fr{display:inline}.fl{float:left}.fr{float:right}.hide{display:none}a{text-decoration:none}a:hover{text-decoration:underline}a.nudl:hover{text-decoration:none}button,input,select,textarea{margin:0}input[type="button"],input[type="submit"],input[type="image"],button{cursor:pointer}textarea{overflow:auto;border:1px solid #ccc;padding:4px 3px;padding:.4rem .3rem;font-size:100%;resize:none}select{padding:2px;border:1px solid #ccc}button{width:auto;overflow:visible;line-height:1.2}button::-moz-focus-inner{border:0;padding:0}html,body{height:100%}body{font:normal 14px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;background:#bebdc1;word-wrap:break-word;word-break:break-all}.bbsizing{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.autoflow{overflow:auto;zoom:1}
+
 /*--- BEGIN Common CSS ---*/
 body{background:url(../img/bg_repeat.png) repeat;}
 .line2px{width:100%;height:0;font-size:0;line-height:0;border-bottom:2px solid #000;}
@@ -15,10 +10,7 @@ body{background:url(../img/bg_repeat.png) repeat;}
 .right{float: right;}
 .main {width:1004px;margin:0 auto;}
 
-#rtWrap{
-  
-  background: url("../img/bg_repeat_top.png") top left repeat-x,url('../img/bg_repeat_btm.png') bottom left repeat-x;min-height:2212px;position:relative;
-}
+#rtWrap{background: url("../img/bg_repeat_top.png") top left repeat-x,url('../img/bg_repeat_btm.png') bottom left repeat-x;min-height:2212px;position:relative;}
 #pageHead{color:#000;font-size:14px;}
 .theTop{padding-top:15px;width:1000px;}
 .navBar{margin-top:5px;}
@@ -31,7 +23,7 @@ body{background:url(../img/bg_repeat.png) repeat;}
 .theTop .rtRow .gz .lnk a{float:left;display:block;width:31px;height:31px;}
 .theTop .rtRow .gz .lnk a:hover{text-decoration:none;}
 .theTop .rtRow .search {padding-top:10px;}
-.theTop .rtRow .search .sinp{z-index:10;width:175px;height:30px;line-height:30px;border:2px solid #000;padding-left:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;behavior: url(./css/iecss3.htc);}
+.theTop .rtRow .search .sinp{z-index:10;width:175px;height:30px;line-height:30px;border:2px solid #000;padding-left:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
 .theTop .rtRow .search .s{
   z-index:5;
   width:48px;
@@ -46,7 +38,6 @@ body{background:url(../img/bg_repeat.png) repeat;}
   -webkit-border-radius:4px;
   -moz-border-radius:4px;
   border-radius:4px;
-  behavior: url(./css/iecss3.htc);
 }
 .navBar .rt{float:right;color:#000;padding-top:15px;}
 .navBar .rt a{color:#000;font-size:14px;}
@@ -79,15 +70,7 @@ input{
   z-index:2; 
   display:none;
   border-radius: 60px;
-  behavior: url(./css/iecss3.htc);
 }
-/*
-#banner li.b1{background:url("../img/banner1.png") center top no-repeat;}
-#banner li.b2{background:url("../img/banner1.png") center top no-repeat;}
-#banner li.b3{background:url("../img/banner1.png") center top no-repeat;}
-#banner li.b4{background:url("../img/banner1.png") center top no-repeat;}
-#banner li.b5{background:url("../img/banner1.png") center top no-repeat;}
-*/
 #series{width:1004px;margin:0 auto;}
 #series li{
   width: 100%;
@@ -114,9 +97,6 @@ input{
   text-align: center;
   position: relative;
   vertical-align: middle;
-  line-height: 1.5;
-  font-family: "Microsoft YaHei",Helvetica,Arial,sans-serif;
-  font-size: 14px;
 }
 .title1 {
   font-size: 30px;
@@ -157,8 +137,6 @@ input{
   width: 1004px;
   height: 321px;
   margin-bottom: 60px;
-  behavior: url(./css/iecss3.htc);
-
 }
 #contact_info {
   width: 500px;
@@ -188,7 +166,6 @@ input{
   width: 1004px;
   height: 321px;
   margin-bottom: 50px;
-  behavior: url(./css/iecss3.htc);
   z-index: 10;
 }
 .about_txt {
@@ -223,7 +200,7 @@ input{
   color:#eee;
 }
 #about li.selected{
-	background-color: #bb32fb;
+  background-color: #bb32fb;
 }
 .show {
   display: block;
@@ -237,8 +214,8 @@ input{
   margin-bottom:10px;
 }
 #love li > div{
-	width:325px;
-	margin:0 auto;
+  width:325px;
+  margin:0 auto;
 }
 #love li a{
   color:#333;
@@ -249,7 +226,7 @@ input{
   height: 184px;
 }
 #love li p{
-	padding: 10px 20px;
+  padding: 10px 20px;
   font-size: 14px;
   background-color: #D4a146;
   text-align: center;
@@ -260,7 +237,6 @@ input{
   width: 100%;
   height: 321px;
   margin-bottom: 30px;
-  behavior: url(./css/iecss3.htc);
   z-index: 100;
 }
 #love_title {
@@ -270,26 +246,11 @@ input{
   text-align: center;
 }
 
-
 /***   自定义文章详情页  **/
 #pageContent .main h1{
   text-align: center;
   font-size: 20px;
   line-height: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

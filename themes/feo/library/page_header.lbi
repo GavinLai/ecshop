@@ -1,14 +1,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- START 自定义css -->
+
 <!--[if lt IE 9]>
-<link rel="stylesheet" href="./css/bg.css" />
+<link href="{$css_dir}/ie.css" rel="stylesheet" />
+<style type="text/css">
+.theTop .rtRow .search .sinp{behavior: url({$css_dir}/iecss3.htc);}
+.theTop .rtRow .search .s{behavior: url({$css_dir}/iecss3.htc);}
+#banner li{behavior: url({$css_dir}/iecss3.htc);}
+#bann_contact{behavior: url({$css_dir}/iecss3.htc);}
+#bann_about {behavior: url({$css_dir}/iecss3.htc);}
+#bann_love {behavior: url({$css_dir}/iecss3.htc);}
+</style>
 <![endif]-->
-<link href="{$css_dir}/style.css" rel="stylesheet" type="text/css" />
 
 <!-- START rtWrap -->
 <div id="rtWrap">
-<!-- END 自定义css -->
-<div id="pageHead">
+  <div id="pageHead">
     <div class="main theTop">
       <div class="logoArea"><a href="index.html"><img src="{$theme_dir}/img/feo_logo.png" alt="FEO LOGO"/></a></div>
       <div class="rtArea">
@@ -27,12 +33,6 @@
     <div class="main navBar">
       <div class="rt"><a href="user.php">登录</a><span>|</span><a href="user.php?act=register">注册</a></div>
       <ul class="navCont clearfix">
-        <!--
-        <li class="navIt"><a href="index.html">首页</a></li>
-        <li class="navIt"><a href="model.html">FEO产品</a></li>
-        <li class="navIt"><a href="love.html">爱上情趣</a></li>
-        <li class="navIt"><a href="about.html">关于FEO</a></li>
-        <li class="navIt"><a href="contact.html">联系我们</a></li>-->
         <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
         <li class="navIt"><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a></li>
         <!-- {/foreach} -->
