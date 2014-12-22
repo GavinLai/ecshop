@@ -111,7 +111,7 @@
           <img src="captcha.php?{$rand}" alt="captcha" onClick="this.src='captcha.php?'+Math.random()" class="captcha">
           </div>
           <!-- {/if} -->
-          <input name="" type="submit"  value="" class="f_r" style="border:none; background:url(../images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
+          <input name="" type="submit"  value="" class="f_r" style="border:none; background:url(../images/commentsBnt.gif); width:63px; height:21px; margin-right:8px;">
           </td>
         </tr>
       </table>

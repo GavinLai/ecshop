@@ -13,17 +13,15 @@
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
-<style type="text/css">
-#rtWrap{background: url("{$css_dir}/../img/bg_repeat_top.png") top left repeat-x,url('{$css_dir}/../img/bg_repeat_btm.png') bottom left repeat-x;}
-</style>
-<!-- START 自定义js -->
-{insert_scripts files='jquery-1.8.3.min.js,touchslider.min.js'}
-<!-- END 自定义js -->
 
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,index.js'}
 
+{* 自定义js *}
+{insert_scripts files='jquery-1.8.3.min.js,touchslider.min.js'}
 
+<!-- #BeginLibraryItem "/library/common_head.lbi" --><!-- #EndLibraryItem -->
+<style type="text/css">#rtWrap{background: url("{$css_dir}/../img/bg_repeat_top.png") top left repeat-x,url('{$css_dir}/../img/bg_repeat_btm.png') bottom left repeat-x;}</style>
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
@@ -38,16 +36,14 @@
           <!--{foreach from=$index_catelist item=val name=catelist}-->
           <li>
             <div class="description">
-              <a href="category.php?id={$val.cat_id}" class="series_des">
+              <a href="category.php?id={$val.cat_id}" class="series_des" target="_blank">
                 <p class="title1">{$val.cat_name}</p>
                 <p class="title2">{$val.cat_name_en}</p>
               </a>
-              <a href="category.php?id={$val.cat_id}" class="more">更多MORE</a>
+              <a href="category.php?id={$val.cat_id}" class="more" target="_blank">更多MORE</a>
             </div>
-            <a href="article.php?id={$val.article.article_id}"><img src="{$val.a_cat_pic}" alt="" class="img_left" ></a>
-            <a href="category.php?id={$val.cat_id}">
-                <img src="{$val.cat_pic}" alt="" >
-            </a>
+            <a href="article.php?id={$val.article.article_id}" target="_blank"><img src="{$val.a_cat_pic}" alt="" class="img_left" /></a>
+            <a href="category.php?id={$val.cat_id}" target="_blank"><img src="{$val.cat_pic}" alt="" /></a>
           </li>
           <!--{/foreach}-->
         </ul>

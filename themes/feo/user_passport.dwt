@@ -12,7 +12,8 @@
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,user.js,transport.js'}
-
+<!-- #BeginLibraryItem "/library/common_head.lbi" --><!-- #EndLibraryItem -->
+</head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 <!--当前位置 start-->
@@ -31,24 +32,24 @@
    <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
         <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
           <tr>
-            <td width="15%" align="right">{$lang.label_username}</td>
-            <td width="85%"><input name="username" type="text" size="25" class="inputBg" /></td>
+            <td width="20%" align="right">{$lang.label_username}:&nbsp;&nbsp;</td>
+            <td width="80%"><input name="username" type="text" size="25" class="inputBg" /></td>
           </tr>
           <tr>
-            <td align="right">{$lang.label_password}</td>
+            <td align="right">{$lang.label_password}:&nbsp;&nbsp;</td>
             <td>
             <input name="password" type="password" size="15"  class="inputBg"/>
             </td>
           </tr>
           <!-- 判断是否启用验证码{if $enabled_captcha} -->
           <tr>
-            <td align="right">{$lang.comment_captcha}</td>
+            <td align="right">{$lang.comment_captcha}:&nbsp;&nbsp;</td>
             <td><input type="text" size="8" name="captcha" class="inputBg" />
             <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
           </tr>
           <!--{/if}-->
-          <tr>
-            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label></td>
+          <tr><td>&nbsp;</td>
+            <td><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
@@ -98,28 +99,28 @@
     <form action="user.php" method="post" name="formUser" onsubmit="return register();">
       <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
         <tr>
-          <td width="13%" align="right">{$lang.label_username}</td>
-          <td width="87%">
+          <td width="15%" align="right">{$lang.label_username}:&nbsp;&nbsp;</td>
+          <td width="85%">
           <input name="username" type="text" size="25" id="username" onblur="is_registered(this.value);" class="inputBg"/>
             <span id="username_notice" style="color:#FF0000"> *</span>
           </td>
         </tr>
         <tr>
-          <td align="right">{$lang.label_email}</td>
+          <td align="right">{$lang.label_email}:&nbsp;&nbsp;</td>
           <td>
           <input name="email" type="text" size="25" id="email" onblur="checkEmail(this.value);"  class="inputBg"/>
             <span id="email_notice" style="color:#FF0000"> *</span>
           </td>
         </tr>
         <tr>
-          <td align="right">{$lang.label_password}</td>
+          <td align="right">{$lang.label_password}:&nbsp;&nbsp;</td>
           <td>
           <input name="password" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="inputBg" style="width:179px;" />
             <span style="color:#FF0000" id="password_notice"> *</span>
           </td>
         </tr>
         <tr>
-          <td align="right">{$lang.label_password_intensity}</td>
+          <td align="right">{$lang.label_password_intensity}:&nbsp;&nbsp;</td>
           <td>
             <table width="145" border="0" cellspacing="0" cellpadding="1">
               <tr align="center">
@@ -131,7 +132,7 @@
           </td>
         </tr>
         <tr>
-          <td align="right">{$lang.label_confirm_password}</td>
+          <td align="right">{$lang.label_confirm_password}:&nbsp;&nbsp;</td>
           <td>
           <input name="confirm_password" type="password" id="conform_password" onblur="check_conform_password(this.value);"  class="inputBg" style="width:179px;"/>
             <span style="color:#FF0000" id="conform_password_notice"> *</span>
@@ -140,7 +141,7 @@
         <!-- {foreach from=$extend_info_list item=field} -->
 	<!-- {if $field.id eq 6} -->
         <tr>
-          <td align="right">{$lang.passwd_question}</td>
+          <td align="right">{$lang.passwd_question}:&nbsp;&nbsp;</td>
           <td>
           <select name='sel_question'>
 	  <option value='0'>{$lang.sel_question}</option>
@@ -149,14 +150,14 @@
           </td>
         </tr>
         <tr>
-          <td align="right" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}</td>
+          <td align="right" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}:&nbsp;&nbsp;</td>
           <td>
 	  <input name="passwd_answer" type="text" size="25" class="inputBg" maxlengt='20'/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
           </td>
         </tr>
 	<!-- {else} -->
         <tr>
-          <td align="right" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}
+          <td align="right" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}:&nbsp;&nbsp;
           <td>
           <input name="extend_field{$field.id}" type="text" size="25" class="inputBg" /><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
           </td>
@@ -165,7 +166,7 @@
 	<!-- {/foreach} -->
       <!-- 判断是否启用验证码{if $enabled_captcha} -->
       <tr>
-      <td align="right">{$lang.comment_captcha}</td>
+      <td align="right">{$lang.comment_captcha}:&nbsp;&nbsp;</td>
       <td><input type="text" size="8" name="captcha" class="inputBg" />
       <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
       </tr>
@@ -219,11 +220,11 @@
             <td colspan="2" align="center"><strong>{$lang.username_and_email}</strong></td>
           </tr>
           <tr>
-            <td width="29%" align="right">{$lang.username}</td>
+            <td width="29%" align="right">{$lang.username}:&nbsp;&nbsp;</td>
             <td width="61%"><input name="user_name" type="text" size="30" class="inputBg" /></td>
           </tr>
           <tr>
-            <td align="right">{$lang.email}</td>
+            <td align="right">{$lang.email}:&nbsp;&nbsp;</td>
             <td><input name="email" type="text" size="30" class="inputBg" /></td>
           </tr>
           <tr>
@@ -248,10 +249,10 @@
         <br />
         <table width="70%" border="0" align="center">
           <tr>
-            <td colspan="2" align="center"><strong>{$lang.get_question_username}</strong></td>
+            <td colspan="2" align="center"><strong>{$lang.get_question_username}</strong>:&nbsp;&nbsp;</td>
           </tr>
           <tr>
-            <td width="29%" align="right">{$lang.username}</td>
+            <td width="29%" align="right">{$lang.username}:&nbsp;&nbsp;</td>
             <td width="61%"><input name="user_name" type="text" size="30" class="inputBg" /></td>
           </tr>
           <tr>

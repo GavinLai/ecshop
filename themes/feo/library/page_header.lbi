@@ -8,11 +8,11 @@
         <div class="rtRow">
           <div class="rt gz clearfix">
             <span>关注FEO：</span>
-            <div id="gz_icon" class="lnk clearfix"><a href="javascript:;" title="扫码关注微信" rel="wx">&nbsp;</a><a href="javascript:;" title="扫码关注腾讯微博" rel="tt">&nbsp;</a><a href="javascript:;" title="扫码关注新浪微博" rel="wb">&nbsp;</a></div>
+            <div id="gz_icon" class="lnk clearfix"><a href="javascript:;" title="扫码关注微信" rel="wx" onmouseover="qrcode_mover(this)" onmouseout="qrcode_mout(this)">&nbsp;</a><a href="javascript:;" title="扫码关注腾讯微博" rel="tt" onmouseover="qrcode_mover(this)" onmouseout="qrcode_mout(this)">&nbsp;</a><a href="javascript:;" title="扫码关注新浪微博" rel="wb" onmouseover="qrcode_mover(this)" onmouseout="qrcode_mout(this)">&nbsp;</a></div>
             <div id="gz_qrcode">
-              <img src="{$css_dir}/../img/qrcode_wx.jpg" alt="" class="wx" />
-              <img src="{$css_dir}/../img/qrcode_tt.jpg" alt="" class="tt" />
-              <img src="{$css_dir}/../img/qrcode_wb.jpg" alt="" class="wb" />
+              <img src="{$css_dir}/../img/qrcode_wx.jpg" alt="" class="wx" id="qrcimg_wx" />
+              <img src="{$css_dir}/../img/qrcode_tt.jpg" alt="" class="tt" id="qrcimg_tt" />
+              <img src="{$css_dir}/../img/qrcode_wb.jpg" alt="" class="wb" id="qrcimg_wb" />
             </div>
           </div>
         </div>
@@ -28,23 +28,29 @@
       </div>
     </div>
 <script type="text/javascript">
-$(function(){
-  var $qr = $('#gz_qrcode');
-  $('#gz_icon > a').each(function(){
-    $(this).bind('mouseover',function(){
-      $('img.'+$(this).attr('rel'),$qr).show();
-      $qr.show();
-    })
-    .bind('mouseout',function(){
-      $qr.hide();
-      $('img.'+$(this).attr('rel'),$qr).hide();
-    });
-  });
-});
+function qrcode_mover(obj) {
+  var _self = qrcode_mover;
+  var _rel  = obj.getAttribute('rel');
+  if (typeof(_self.imgp)=='undefined') {
+    _self.imgp = document.getElementById('gz_qrcode');
+  }
+  document.getElementById('qrcimg_'+_rel).style.display = 'inline';
+  _self.imgp.style.display = 'block';
+}
+function qrcode_mout(obj) {
+  var _self = qrcode_mout;
+  var _rel  = obj.getAttribute('rel');
+  if (typeof(_self.imgp)=='undefined') {
+    _self.imgp = document.getElementById('gz_qrcode');
+  }
+  _self.imgp.style.display = 'none';
+  document.getElementById('qrcimg_'+_rel).style.display = 'none';
+}
 </script>
     <div class="main navBar">
       <div class="rt"><a href="user.php">登录</a><span>|</span><a href="user.php?act=register">注册</a></div>
       <ul class="navCont clearfix">
+        <li class="navIt"><a href="/"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a></li>
         <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
         <li class="navIt"><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a></li>
         <!-- {/foreach} -->

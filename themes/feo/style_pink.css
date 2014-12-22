@@ -8,11 +8,10 @@ Author URI: http://weium.com/
 Logo filename: logo.gif
 Template Type: typepink_0
 */
-
-/* ===============
-     FEO样式
-=============== */
-@import url(./css/style.css);
+/* ==========================
+   reset && core css(for FEO)
+========================== */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}select{-webkit-appearance:none}html{font-size:62.5%}body{font-size:14px;font-size:1.4rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;line-height:1.5;color:#333}.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{zoom:1}*:first-child+html .clearfix{zoom:1}.fl,.fr{display:inline}.fl{float:left}.fr{float:right}.hide{display:none}a{text-decoration:none}a:hover{text-decoration:underline}a.nudl:hover{text-decoration:none}button,input,select,textarea{margin:0}input[type="button"],input[type="submit"],input[type="image"],button{cursor:pointer}textarea{overflow:auto;border:1px solid #ccc;padding:4px 3px;padding:.4rem .3rem;font-size:100%;resize:none}select{padding:2px;border:1px solid #ccc}button{width:auto;overflow:visible;line-height:1.2}button::-moz-focus-inner{border:0;padding:0}html,body{height:100%}body{font:normal 14px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;background:#bebdc1;word-wrap:break-word;word-break:break-all}.bbsizing{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.autoflow{overflow:auto;zoom:1}
 
 /* ====================
      公共样式
@@ -22,9 +21,7 @@ div{margin:0 auto; padding:0;}
 h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p{
 margin:0; padding:0; border:none; list-style-type:none;
 }
-.block{
-  width:960px; height:auto;
-}
+.block{width:960px; height:auto;margin:0 auto;}
 .f_l{float:left;}
 .f_r{float:right;}
 .tl{ text-align:left;}
@@ -66,7 +63,7 @@ visibility:hidden;
   .shop_s{color:#fe596a;}
   /*按钮部分*/
   .bnt_blue{
-  background:url(images/pink/bg.gif) no-repeat 0px 0px; width:52px; height:21px;
+  background:url(images/pink/bg.gif) no-repeat 0px 0px; width:40px; height:21px;
   text-align:center; line-height:21px; color:#fff; border:none; cursor:pointer;
   }
   .bnt_blue_1{
@@ -295,7 +292,7 @@ visibility:hidden;
      商品详情页面部分模块
 ==================== */
    #goodsInfo{background:#f2f2f2; padding:8px; _height:1%;}
-   #goodsInfo .imgInfo{width:230px; float:left; margin-right:10px; overflow:hidden;}
+   #goodsInfo .imgInfo{width:440px; float:left; margin-right:10px; overflow:hidden;}
    #goodsInfo .imgInfo .thumb{width:230px; height:230px; display:block;}/*商品详情图片*/
    #goodsInfo span{width:4px; height:48px; background:url(images/pink/bg.gif) no-repeat 0 -527px; float:left;}
    #goodsInfo span.spanR{width:4px; height:48px; background:url(images/pink/bg.gif) no-repeat -5px -527px; float:right;}
@@ -344,11 +341,12 @@ visibility:hidden;
      用户中心
 ==================== */
     .box_1 .userCenterBox{border:4px solid #fef7f9; background-color:#fff;}
-    .usBox{background:#f2f2f2; border:1px solid #e2e2e2; padding:15px; width:928px;}
+    .usBox{background:#f2f2f2; border:1px solid #e2e2e2; padding:15px; width:928px;margin:0 auto;}
     .usBox_1{background:#fff; text-align:left; width:297px; height:208px; padding:43px 153px 60px 123px;}
     .usBox_1 .logtitle{height:30px; background:url(images/ur_bg.gif) no-repeat 0px 0px;}
-    .us_Submit{border:none; width:115px; height:40px; background:url(images/bnt_ur_log.gif);}
-    .us_Submit_reg{border:none; width:113px; height:40px; background:url(images/bnt_ur_reg.gif);}
+    .usBox_1 td{height:30px;}
+    .us_Submit{border:none; width:101px; height:40px; background:url(images/bnt_ur_log.gif) no-repeat;}
+    .us_Submit_reg{border:none; width:101px; height:40px; background:url(images/bnt_ur_reg.gif);}
     .usTxt{width:265px; height:267px; padding:43px 0 0 90px; background:#f2f2f2; float:right;
     text-align:left; background:url(images/ur_bg1.gif) no-repeat 0 50%; line-height:23px;
     }
@@ -356,6 +354,7 @@ visibility:hidden;
     /*注册*/
     .usBox_2{background:#fff; text-align:left; padding:43px 153px 60px 123px;}
     .usBox_2 .regtitle{height:30px; background:url(images/ur_bg.gif) no-repeat 0px -34px;}
+    .usBox_2 td{height:30px;}
     .actionSub a{color:#006acc; text-decoration:underline;
     background:url(images/ur_bg.gif) no-repeat 0px -68px; padding-left:14px;
     }

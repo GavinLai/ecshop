@@ -17,6 +17,7 @@
     var {$key} = "{$item}";
   {/foreach}
 </script>
+<!-- #BeginLibraryItem "/library/common_head.lbi" --><!-- #EndLibraryItem -->
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->

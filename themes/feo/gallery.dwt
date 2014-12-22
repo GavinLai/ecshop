@@ -5,14 +5,13 @@
 <link rel="shortcut icon" href="favicon.ico" >
 <link rel="icon" href="animated_favicon.gif" type="image/gif" >
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-<style>
-body{margin:0;}
-</style>
+<style>body{margin:0;}</style>
 <script type="text/javascript">
 {foreach from=$lang.gallery_js item=lang_js key=key}
 var {$key} = '{$lang_js}';
 {/foreach}
 </script>
+<!-- #BeginLibraryItem "/library/common_head.lbi" --><!-- #EndLibraryItem -->
 </head>
 <body>
 <div id="show-pic">

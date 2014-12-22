@@ -64,6 +64,7 @@ color:#222;
 </style>
 {* 包含脚本文件 *}
 {insert_scripts files='common.js'}
+<!-- #BeginLibraryItem "/library/common_head.lbi" --><!-- #EndLibraryItem -->
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
